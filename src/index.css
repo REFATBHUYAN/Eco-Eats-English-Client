@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #ffffff;
+}
+
+/* :root {
+  --swiper-pagination-bullet-active: #22C55E;
+  --swiper-navigation-size: 40px;
+} */
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Hind+Siliguri&display=swap'); */
+
+@layer base {
+  html {
+    font-family: "Hind Siliguri", sans-serif;
+  }
+}
+.active {
+  color: #16a34a;
+}
+
+@media print {
+  .printButton {
+    color: transparent !important;
+  }
+  body {
+    counter-reset: page;
+  }
+
+  body::before {
+    content: counter(page);
+    counter-increment: page;
+    display: none;
+  }
+
+  body::after {
+    content: "URL: " attr(data-url) "\A Title: "attr(data-title) "\A Time: "attr(
+        data-time
+      );
+    display: none;
+  }
+}
+
+/* option:hover,
+option:checked {
+  background-color: #16A34A;
+  
+} */
+
+/* option:hover {
+  background-color: #16A34A !important;
+  
+} */
+
+/* Change the color of the active pagination bullet */
+.swiper-pagination-bullet-active {
+  background-color: #22c55e !important;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ping-icon {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.font-unica {
+  font-family: "Unica One", cursive;
+}
+
+.bg-img {
+  background-image: url("assets/hero-bg.png");
+}
+
+scroll
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar:horizontal{
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #CBD5E1;
+  border-radius: 50px;
+  border-right: none;
+  border-left: none;
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+  background-color: #CBD5E1;
+  border-radius: 50px;
+  border-right: none;
+  border-left: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94A3B8;
+}
+
+/* slider */
+
+.slick-prev {
+  font-size: 0;
+  line-height: 0;
+
+  position: absolute;
+  top: 50%;
+
+  display: block;
+
+  width: 50px!;
+  height: 50px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+
+  position: absolute;
+  top: 50%;
+
+  display: block;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
